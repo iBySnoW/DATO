@@ -27,7 +27,7 @@ const {
 } = await useLazyAsyncQuery(SectionIntro);
 const sectionIntroData = ref(sectionIntro.value);
 
-/*// SECTION LIST
+// SECTION LIST
 
 const {
      data: sectionList,
@@ -45,6 +45,7 @@ if (!listPending) {
      );
 }
 
+/*
 // SECTION CATEGORIE
 const {
      data: sectionCategorie,
