@@ -6,6 +6,7 @@ const { data, pending, error } = await useLazyAsyncQuery(Header);
 </script>
 
 <template>
+
      <div v-if="!pending" class="header" >
           <img
                class="logo"

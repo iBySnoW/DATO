@@ -33,7 +33,9 @@ const {
      listError,
 } = await useLazyAsyncQuery(SectionList);
 
+
 const sectionListData = ref(sectionList.value);
+
 
 // SECTION CATEGORIE
 const {
@@ -42,10 +44,26 @@ const {
      categorieError,
 } = await useLazyAsyncQuery(SectionCategorie);
 
+
 const sectionCategorieData = ref(sectionCategorie.value);
 </script>
 
 <template>
+
+    <header v-if="sectionIntroData && !introPending">
+            <head>
+                <meta charset="utf-8" />
+                <meta
+                        name="viewport"
+                        content="width=device-width, initial-scale=1"
+                />
+                <title>{{ sectionIntroData.header.title }}</title>
+                <meta
+                        name="description"
+                        :content="sectionIntroData.sectionIntro.description"
+                />
+            </head>
+    </header>
      <div>
           <section v-if="sectionIntroData && !introPending">
                <div id="SectionIntro" class="first jarallax">
@@ -61,6 +79,7 @@ const sectionCategorieData = ref(sectionCategorie.value);
                </p>
           </section>
 
+
           <section v-if="sectionListData && !listPending">
                <div
                     id="SectionList"
@@ -68,6 +87,7 @@ const sectionCategorieData = ref(sectionCategorie.value);
                >
                     <img
                          class="jarallax-img"
+
                          :src="sectionListData.sectionList.parallaxPicture.url"
                          :alt="sectionListData.sectionList.parallaxPicture.url"
                     />

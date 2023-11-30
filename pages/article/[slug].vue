@@ -5,12 +5,24 @@ const {
      data: articleQuery,
      pending,
      error,
-} =  await useLazyAsyncQuery(SingleArticle, { slug: route.params.slug });
-
-
+} = await useLazyAsyncQuery(SingleArticle, { slug: route.params.slug });
 </script>
 
 <template>
+     <header v-if="articleQuery.article.seoMetadata">
+          <head>
+               <meta charset="utf-8" />
+               <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1"
+               />
+               <title>{{ articleQuery.article.seoMetadata.title }}</title>
+               <meta
+                    name="description"
+                    :content="articleQuery.article.seoMetadata.description"
+               />
+          </head>
+     </header>
      <div class="article" v-if="!pending">
           <h3>{{ articleQuery.article.title }}</h3>
 
