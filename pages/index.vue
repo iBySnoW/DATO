@@ -1,11 +1,11 @@
 <script setup>
-import { onMounted } from "vue";
 
 import SectionIntro from "@/cms/Queries/section/sectionIntro";
 import SectionList from "~/cms/Queries/section/sectionList";
 import SectionCategorie from "~/cms/Queries/section/sectionCategorie";
 
 
+/*
 onMounted(() => {
      if (process.client) {
           import("jarallax").then(({ jarallax }) => {
@@ -15,7 +15,7 @@ onMounted(() => {
                });
           });
      }
-});
+});*/
 
 // SECTION INTRO
 
@@ -57,9 +57,8 @@ const sectionCategorieData = ref(sectionCategorie.value);
      <div>
           
           <section v-if="sectionIntroData && !introPending">
-               <div id="SectionIntro" class="first jarallax">
+               <div id="SectionIntro" class="first">
                     <img
-                         class="jarallax-img"
                          :src="sectionIntroData.sectionIntro.picture.url"
                          :alt="sectionIntroData.sectionIntro.picture.alt"
                     />
@@ -74,10 +73,9 @@ const sectionCategorieData = ref(sectionCategorie.value);
                <div
                     v-if="sectionListParallaxPicture"
                     id="SectionList"
-                    class="second jarallax"
+                    class="second"
                >
                     <img
-                         class="jarallax-img"
                          :src="sectionListParallaxPicture.url"
                          :alt="sectionListParallaxPicture.alt"
                     />
@@ -122,19 +120,6 @@ const sectionCategorieData = ref(sectionCategorie.value);
 </template>
 
 <style scoped>
-.jarallax {
-     position: relative;
-     z-index: 0;
-}
-
-.jarallax > .jarallax-img {
-     position: absolute;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
-     z-index: -1;
-}
 
 .first {
      height: 550px;
