@@ -5,6 +5,7 @@ import SectionIntro from "@/cms/Queries/section/sectionIntro";
 import SectionList from "~/cms/Queries/section/sectionList";
 import SectionCategorie from "~/cms/Queries/section/sectionCategorie";
 
+/*
 onMounted(() => {
      if (process.client) {
           import("jarallax").then(({ jarallax }) => {
@@ -14,7 +15,7 @@ onMounted(() => {
                });
           });
      }
-});
+});*/
 
 // SECTION INTRO
 
