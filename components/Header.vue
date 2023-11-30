@@ -1,4 +1,4 @@
-<script setup>
+<!-- <script setup>
 import Header from "@/cms/Queries/header";
 
 const { data, pending, error } = await useLazyAsyncQuery(Header);
@@ -40,4 +40,4 @@ const { data, pending, error } = await useLazyAsyncQuery(Header);
      height: 100px;
      border-radius: 100%;
 }
-</style>
+</style> -->

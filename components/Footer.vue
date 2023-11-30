@@ -1,4 +1,4 @@
-<script setup>
+<!-- <script setup>
 
 import Footer from "@/cms/Queries/footer"
 
@@ -42,4 +42,4 @@ const {data, pending, error} = await useLazyAsyncQuery(Footer);
      margin: 10px;
      width: 50px;
     }
-</style>
+</style> -->
