@@ -47,7 +47,6 @@ const sectionCategorieData = ref(sectionCategorie.value);
 
 <template>
      <div>
-            <Header />
           <section v-if="sectionIntroData && !introPending">
                <div id="SectionIntro" class="first jarallax">
                     <img
@@ -88,7 +87,7 @@ const sectionCategorieData = ref(sectionCategorie.value);
                          <h3>{{ article.title }}</h3>
                          <p>{{ article.content }}</p>
 
-                         <!-- <a :href="`article/${article.blogSlug}`">Détails</a> -->
+                         <a :href="`article/${article.blogSlug}`">Détails</a>
                     </div>
                </div>
           </section>
@@ -102,9 +101,9 @@ const sectionCategorieData = ref(sectionCategorie.value);
                          v-for="categorie in sectionCategorieData
                               .sectionCategorie.categorie"
                     >
-                         <!-- <a :href="`article/category/${categorie.slug}`">{{
+                         <a :href="`article/category/${categorie.slug}`">{{
                               categorie.name
-                         }}</a> -->
+                         }}</a>
                     </div>
                </div>
           </section>
