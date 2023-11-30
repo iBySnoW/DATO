@@ -5,7 +5,7 @@ const {
      data: articleQuery,
      pending,
      error,
-} =  useLazyAsyncQuery(SingleArticle, { slug: route.params.slug });
+} =  await useLazyAsyncQuery(SingleArticle, { slug: route.params.slug });
 
 
 </script>

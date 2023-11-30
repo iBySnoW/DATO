@@ -35,7 +35,7 @@ articleFiltered = computed(() => {
                <h3>{{ article.title }}</h3>
                <p>{{ article.content }}</p>
 
-               <a :href="'article/' + article.blogSlug">Détails</a>
+               <a :href="`/article/${article.blogSlug}`">Détails</a>
           </div>
      </div>
 </template>

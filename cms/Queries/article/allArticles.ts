@@ -3,6 +3,7 @@ export default gql`
           allArticles {
                content
                id
+               blogSlug
                image {
                     alt
                     url
