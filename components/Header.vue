@@ -17,7 +17,7 @@ const title  = ref(header.value.header.title);
     <nav>
         <ul>
             <li v-for="navBlock in navBlocks" :key="navBlock.id">
-                <a :href="navBlock.link">{{ navBlock.label }}</a>
+                <a href="#">{{ navBlock.label }}</a>
             </li>
         </ul>
     </nav>
