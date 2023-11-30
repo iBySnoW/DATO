@@ -61,7 +61,7 @@ const sectionCategorieData = ref(sectionCategorie.value);
                </p>
           </section>
 
-          <section v-if="!listPending">
+          <section v-if="sectionListData && !listPending">
                <div
                     id="SectionList"
                     class="second jarallax"
@@ -92,7 +92,7 @@ const sectionCategorieData = ref(sectionCategorie.value);
                </div>
           </section>
 
-          <section class="sectionCategorie" v-if="!categoriePending">
+          <section class="sectionCategorie" v-if="sectionCategorieData && !categoriePending">
                <h2>{{ sectionCategorieData.sectionCategorie.title }}</h2>
 
                <div class="categories">
