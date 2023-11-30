@@ -48,9 +48,9 @@ const sectionCategorieData = ref(sectionCategorie.value);
 <template>
      <div>
           <section v-if="sectionIntroData && !introPending">
-               <div id="SectionIntro" class="first">
+               <div id="SectionIntro" class="first jarallax">
                     <img
-                         class=""
+                         class="jarallax-img"
                          :src="sectionIntroData.sectionIntro.picture.url"
                          :alt="sectionIntroData.sectionIntro.picture.alt"
                     />
