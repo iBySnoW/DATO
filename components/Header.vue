@@ -1,12 +1,12 @@
 <script setup>
 import Header from "@/cms/Queries/header";
 
-const { data, pending, error } = await useAsyncQuery(Header);
+const { data, pending, error } = useAsyncQuery(Header);
 
 </script>
 
 <template>
-     <div class="header" v-if="!pending">
+     <div v-if="!pending" class="header" >
           <img
                class="logo"
                :src="data.header.logo.url"
