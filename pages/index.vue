@@ -19,6 +19,8 @@ onMounted(() => {
 
 // SECTION INTRO
 
+
+/*
 const {
      data: sectionIntro,
      introPending,
@@ -51,6 +53,8 @@ const {
      categorieError,
 } = await useLazyAsyncQuery(SectionCategorie);
 const sectionCategorieData = ref(sectionCategorie.value);
+
+*/
 </script>
 
 <template>
