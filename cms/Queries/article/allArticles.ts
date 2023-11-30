@@ -9,15 +9,14 @@ export default gql`
                     url
                }
                title
-               seoMetadata {
-                    description
-                    title
-                    twitterCard
-               }
                categorie {
                     id
                     name
                     slug
+                    seoMeta {
+                         title
+                         description
+                    }
                }
           }
      }

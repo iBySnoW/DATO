@@ -15,11 +15,25 @@ articleFiltered = computed(() => {
      }
      return [];
 });
-
 </script>
 
 <template>
-       <h1>Catégorie - {{ route.params.category }}</h1>
+     <header v-if="articleFiltered[0].categorie.seoMeta">
+          <head>
+               <meta charset="utf-8" />
+               <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1"
+               />
+               <title>{{ articleFiltered[0].categorie.seoMeta.title }}</title>
+               <meta
+                    name="description"
+                    :content="articleFiltered[0].categorie.seoMeta.description"
+               />
+          </head>
+     </header>
+
+     <h1>Catégorie - {{ route.params.category }}</h1>
 
      <div class="listArticle" v-if="!pending">
           <div

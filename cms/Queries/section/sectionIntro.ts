@@ -8,5 +8,8 @@ export default gql`
                }
                description
           }
+          header {
+               title
+          }
      }
 `;

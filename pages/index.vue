@@ -49,6 +49,21 @@ const sectionCategorieData = ref(sectionCategorie.value);
 </script>
 
 <template>
+
+    <header v-if="sectionIntroData && !introPending">
+            <head>
+                <meta charset="utf-8" />
+                <meta
+                        name="viewport"
+                        content="width=device-width, initial-scale=1"
+                />
+                <title>{{ sectionIntroData.header.title }}</title>
+                <meta
+                        name="description"
+                        :content="sectionIntroData.sectionIntro.description"
+                />
+            </head>
+    </header>
      <div>
           <section v-if="sectionIntroData && !introPending">
                <div id="SectionIntro" class="first jarallax">
