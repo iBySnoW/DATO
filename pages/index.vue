@@ -129,8 +129,6 @@ const sectionCategorieData = ref(sectionCategorie.value);
 
 .jarallax > .jarallax-img {
      position: absolute;
-     object-fit: cover;
-     font-family: "object-fit: cover;";
      top: 0;
      left: 0;
      width: 100%;
