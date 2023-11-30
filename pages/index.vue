@@ -33,15 +33,9 @@ const {
      listError,
 } = await useLazyAsyncQuery(SectionList);
 
-let sectionListArticles;
-let sectionListParallaxPicture;
 
-if (!listPending) {
-     sectionListArticles = ref(sectionList.value.sectionList.articles);
-     sectionListParallaxPicture = ref(
-          sectionList.value.sectionList.parallaxPicture
-     );
-}
+const sectionListData = ref(sectionList.value);
+
 
 // SECTION CATEGORIE
 const {
@@ -49,12 +43,13 @@ const {
      categoriePending,
      categorieError,
 } = await useLazyAsyncQuery(SectionCategorie);
+
+
 const sectionCategorieData = ref(sectionCategorie.value);
 </script>
 
 <template>
      <div>
-          
           <section v-if="sectionIntroData && !introPending">
                <div id="SectionIntro" class="first jarallax">
                     <img
@@ -69,24 +64,24 @@ const sectionCategorieData = ref(sectionCategorie.value);
                </p>
           </section>
 
-          <section v-if="!listPending">
+
+          <section v-if="sectionListData && !listPending">
                <div
-                    v-if="sectionListParallaxPicture"
                     id="SectionList"
                     class="second jarallax"
                >
                     <img
                          class="jarallax-img"
-                         :src="sectionListParallaxPicture.url"
-                         :alt="sectionListParallaxPicture.alt"
+
+                         :src="sectionListData.sectionList.parallaxPicture.url"
+                         :alt="sectionListData.sectionList.parallaxPicture.url"
                     />
                </div>
 
                <div class="SectionListContent">
                     <div
-                         v-if="sectionListArticles"
                          class="cards"
-                         v-for="article in sectionListArticles"
+                         v-for="article in sectionListData.sectionList.articles"
                          :key="article.id"
                     >
                          <img
@@ -102,7 +97,7 @@ const sectionCategorieData = ref(sectionCategorie.value);
                </div>
           </section>
 
-          <section class="sectionCategorie" v-if="!categoriePending">
+          <section class="sectionCategorie" v-if="sectionCategorieData && !categoriePending">
                <h2>{{ sectionCategorieData.sectionCategorie.title }}</h2>
 
                <div class="categories">

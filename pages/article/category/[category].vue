@@ -19,7 +19,7 @@ articleFiltered = computed(() => {
 </script>
 
 <template>
-     <h1>Catégorie - {{ route.params.category }}</h1>
+       <h1>Catégorie - {{ route.params.category }}</h1>
 
      <div class="listArticle" v-if="!pending">
           <div
