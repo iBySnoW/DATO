@@ -5,7 +5,6 @@ import SectionIntro from "@/cms/Queries/section/sectionIntro";
 import SectionList from "~/cms/Queries/section/sectionList";
 import SectionCategorie from "~/cms/Queries/section/sectionCategorie";
 
-
 onMounted(() => {
      if (process.client) {
           import("jarallax").then(({ jarallax }) => {
@@ -26,7 +25,6 @@ const {
 } = await useLazyAsyncQuery(SectionIntro);
 const sectionIntroData = ref(sectionIntro.value);
 
-/*
 // SECTION LIST
 
 const {
@@ -43,12 +41,12 @@ const {
      categoriePending,
      categorieError,
 } = await useLazyAsyncQuery(SectionCategorie);
-const sectionCategorieData = ref(sectionCategorie.value);*/
+
+const sectionCategorieData = ref(sectionCategorie.value);
 </script>
 
 <template>
      <div>
-          
           <section v-if="sectionIntroData && !introPending">
                <div id="SectionIntro" class="first jarallax">
                     <img
@@ -62,26 +60,23 @@ const sectionCategorieData = ref(sectionCategorie.value);*/
                     {{ sectionIntroData.sectionIntro.description }}
                </p>
           </section>
-        
-          
-          <!-- <section v-if="!listPending">
+
+          <section v-if="!listPending">
                <div
-                    v-if="sectionListParallaxPicture"
                     id="SectionList"
                     class="second jarallax"
                >
                     <img
                          class="jarallax-img"
-                         :src="sectionListParallaxPicture.url"
-                         :alt="sectionListParallaxPicture.alt"
+                         :src="sectionListData.sectionList.parallaxPicture.url"
+                         :alt="sectionListData.sectionList.parallaxPicture.url"
                     />
                </div>
 
                <div class="SectionListContent">
                     <div
-                         v-if="sectionListArticles"
                          class="cards"
-                         v-for="article in sectionListArticles"
+                         v-for="article in sectionListData.sectionList.articles"
                          :key="article.id"
                     >
                          <img
@@ -92,7 +87,7 @@ const sectionCategorieData = ref(sectionCategorie.value);*/
                          <h3>{{ article.title }}</h3>
                          <p>{{ article.content }}</p>
 
-                         <a :href="`article/${article.blogSlug}`">Détails</a>
+                         <!-- <a :href="`article/${article.blogSlug}`">Détails</a> -->
                     </div>
                </div>
           </section>
@@ -106,12 +101,12 @@ const sectionCategorieData = ref(sectionCategorie.value);*/
                          v-for="categorie in sectionCategorieData
                               .sectionCategorie.categorie"
                     >
-                         <a :href="`article/category/${categorie.slug}`">{{
+                         <!-- <a :href="`article/category/${categorie.slug}`">{{
                               categorie.name
-                         }}</a>
+                         }}</a> -->
                     </div>
                </div>
-          </section> -->
+          </section>
      </div>
 </template>
 
