@@ -1,7 +1,7 @@
 <script setup>
 import Header from "@/cms/Queries/header";
 
-const { data, pending, error } = useAsyncQuery(Header);
+const { data, pending, error } = useLazyAsyncQuery(Header);
 
 </script>
 
