@@ -35,16 +35,7 @@ const {
      listError,
 } = await useLazyAsyncQuery(SectionList);
 
-let sectionListArticles;
-let sectionListParallaxPicture;
-
-if (!listPending) {
-     sectionListArticles = ref(sectionList.value.sectionList.articles);
-     sectionListParallaxPicture = ref(
-          sectionList.value.sectionList.parallaxPicture
-     );
-}
-
+const sectionListData = ref(sectionList.value);
 /*
 // SECTION CATEGORIE
 const {
